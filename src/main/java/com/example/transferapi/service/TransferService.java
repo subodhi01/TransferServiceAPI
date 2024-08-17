@@ -24,13 +24,18 @@ public class TransferService {
         }
 
         if (source.getBalance() < transaction.getAmount()) {
-            return "Insufficient funds.";
+            return "Insufficient funds.\n" +
+           "Source Account Balance: " + source.getBalance();
         }
 
+        // Perform the transfer
         source.setBalance(source.getBalance() - transaction.getAmount());
         destination.setBalance(destination.getBalance() + transaction.getAmount());
 
-        return "Transfer successful.";
+        // Return the result including the new balances
+        return "Transfer successful.\n" +
+               "Source Account Balance: " + source.getBalance() + "\n" +
+               "Destination Account Balance: " + destination.getBalance();
     }
 }
 
