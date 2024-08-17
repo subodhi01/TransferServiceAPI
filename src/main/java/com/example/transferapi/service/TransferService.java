@@ -6,6 +6,7 @@ import com.example.transferapi.model.Transaction;
 import java.util.HashMap;
 import java.util.Map;
 
+//Service class for handling fund transfers between accounts.
 public class TransferService {
     private Map<String, Account> accounts = new HashMap<>();
 
@@ -15,7 +16,9 @@ public class TransferService {
         accounts.put("67890", new Account("67890", 1500.0));
     }
 
+    //Transfers funds between accounts based on the provided transaction details.
     public String transferFunds(Transaction transaction) {
+        // Retrieve the source and destination accounts from the map
         Account source = accounts.get(transaction.getSourceAccountNumber());
         Account destination = accounts.get(transaction.getDestinationAccountNumber());
 
