@@ -37,15 +37,30 @@ This project is a simple RESTful API implemented in Java to handle fund transfer
 4. **Run the application:**
 
    ```bash
-   mvn spring-boot:run
+   java -cp target/classes com.example.transferapi.controller.TransferController
+
    ```
 
-5. **Access the API:**
+5.**Run the tests:**
 
-   The API will be available at `http://localhost:8080` by default.
+   ```bash
+   mvn test
+   ```
 
 ## API Endpoints
 
-- **POST /accounts**: Create a new account.
+- **POST /transfer**: Initiates a fund transfer between two accounts.
+
+## Usage
+
+To use the API, send a POST request to the `/transfer` endpoint with the necessary payload.
+
+## Testing
+
+The project includes a basic test suite in `TransferServiceTest.java` to verify the functionality of the transfer service. You can run the tests using the `mvn test` command.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
   
 
